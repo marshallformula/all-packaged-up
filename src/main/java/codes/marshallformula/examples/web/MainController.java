@@ -1,7 +1,6 @@
 package codes.marshallformula.examples.web;
 
 import codes.marshallformula.examples.service.ParkService;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
