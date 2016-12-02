@@ -1,18 +1,37 @@
 {
-  "name": "app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "elm-starter",
+  "version": "1.0.0",
+  "description": "'setting up elm workspace'",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm i && elm package install -y",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --port 3000",
+    "start": "npm run dev",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marshallformula/elm-starter.git"
+  },
+  "author": "marshallformula",
+  "license": "MIT",
   "devDependencies": {
-    "react-scripts": "0.7.0"
+    "copy-webpack-plugin": "^4.0.0",
+    "css-loader": "^0.23.1",
+    "elm-webpack-loader": "^3.0.6",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "ace-css": "^1.1.0",
+    "font-awesome": "^4.6.3"
   }
 }
