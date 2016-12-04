@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm i && elm package install -y",
-    "build": "webpack",
+    "prebuild": "npm run clean",
+    "build": "webpack --optimize-minimize",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
     "start": "npm run dev",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf ../resources/static"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "ace-css": "^1.1.0",
+    "d3": "^4.4.0",
     "font-awesome": "^4.6.3"
   }
 }

@@ -7,3 +7,7 @@ html, body {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+#main {
+  width: 960px;
+}

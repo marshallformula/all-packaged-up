@@ -1,3 +1,5 @@
 .idea/
 .gradle/
 build/
+**/npm-debug.log
+/src/main/resources/static/

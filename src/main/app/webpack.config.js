@@ -1,10 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
-const CopyWebpackPlugin  = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const debugMode = process.argv.includes('--debug')
-
-const dest = path.resolve(__dirname + '/dist')
+const dest = path.resolve(__dirname, '../', 'resources/static')
 
 module.exports = {
   entry: {
@@ -12,7 +10,7 @@ module.exports = {
   },
 
   output: {
-    path: dest
+    path: dest,
     filename: '[name].js'
   },
 
@@ -23,14 +21,14 @@ module.exports = {
         loaders: ['style', 'css', 'less']
       },
       {
+        test: /\.js$/,
+        exclude: [/node_modules/, /elm-stuff/],
+        loaders: ['babel']
+      },
+      {
         test: /\.html$/,
         exclude: /node_modules/,
         loader: 'file?name=[name].[ext]'
-      },
-      {
-        test: /\.elm$/,
-        exclude: /node_modules/,
-        loader: 'elm-webpack' + (debugMode ? '?debug=true' : '')
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -46,6 +44,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      REST_URL :  JSON.stringify(process.env.REST_URL || "/api")
+    }),
+
     new CopyWebpackPlugin([
       {
         from: 'assets',
@@ -56,7 +58,7 @@ module.exports = {
 
   devServer: {
     inline: true,
-    stats: { colors: true },
+    stats: {colors: true},
     historyApiFallback: true,
     outputPath: dest
   }
