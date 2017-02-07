@@ -1,20 +1,16 @@
 {
-  "name": "elm-starter",
+  "name": "packaged-app",
   "version": "1.0.0",
-  "description": "'setting up elm workspace'",
+  "description": "example of packaging web application",
   "main": "index.js",
   "scripts": {
-    "setup": "npm i && elm package install -y",
+    "setup": "npm i",
     "prebuild": "npm run clean && npm run setup",
     "build": "webpack --optimize-minimize",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
     "start": "npm run dev",
     "clean": "rm -rf ../resources/static"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:marshallformula/elm-starter.git"
   },
   "author": "marshallformula",
   "license": "MIT",
@@ -24,7 +20,6 @@
     "babel-preset-latest": "^6.22.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.23.1",
-    "elm-webpack-loader": "^3.0.6",
     "file-loader": "^0.9.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
