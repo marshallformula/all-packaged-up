@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm i && elm package install -y",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run clean && npm run setup",
     "build": "webpack --optimize-minimize",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
@@ -19,6 +19,9 @@
   "author": "marshallformula",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.23.1",
     "elm-webpack-loader": "^3.0.6",
