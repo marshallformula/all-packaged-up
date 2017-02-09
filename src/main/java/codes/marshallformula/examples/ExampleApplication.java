@@ -20,6 +20,7 @@ public class ExampleApplication extends WebMvcConfigurerAdapter {
     @Value("${cors.origins}")
     private String origins;
 
+    //this is to add allow the CORS origins specified on the cors.orgins property to communicate with this server.
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
@@ -40,6 +41,8 @@ public class ExampleApplication extends WebMvcConfigurerAdapter {
     }
 
 
+    //this is necessary to forward all un-mapped requests to index.html.
+    //This is required if you want to use the HTML5 History API
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.setOrder(Ordered.LOWEST_PRECEDENCE);
@@ -47,6 +50,7 @@ public class ExampleApplication extends WebMvcConfigurerAdapter {
     }
 
 
+    //this is helpful in connection with the method above to allow paths to the /assets folder for images, files etc
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
