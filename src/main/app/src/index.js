@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import 'ace-css/css/ace.css'
 import 'font-awesome/css/font-awesome.css'
-import './main.css'
+import './main.less'
 
 //add index.html to dist
 import './index.html'
